@@ -21,7 +21,7 @@ class PrintFulController extends Controller
 
       // create Products Api object
       $productsApi = new PrintfulProducts($pf);
-      $products = $pf->get('categories');
+      $products = $pf->get('categories/1');
       dd($products);
 
       // set some paging info
