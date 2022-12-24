@@ -14,7 +14,7 @@ class PrintFulController extends Controller
     public function get_products()
     {
       // Replace this with your API key
-  $apiKey = 'O58NA5rVmO57OnXkb7TyYAKsCxOKmLFBiFlWCYCZ';
+  $apiKey = 'O58NA5rVmO57OnXkb7TyYAKsCxOKmLFBiFlWCYCZd';
 
   // create ApiClient
   $pf = new PrintfulApiClient($apiKey);
