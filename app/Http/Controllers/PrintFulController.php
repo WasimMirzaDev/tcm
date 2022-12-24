@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Printful\Exceptions\PrintfulApiException;
+use Printful\Exceptions\PrintfulException;
 use Printful\PrintfulApiClient;
 use Printful\PrintfulProducts;
+use Printful\Structures\Sync\Responses\SyncProductsResponse;
 
 class PrintFulController extends Controller
 {
