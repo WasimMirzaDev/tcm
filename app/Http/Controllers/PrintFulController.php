@@ -16,24 +16,35 @@ class PrintFulController extends Controller
       // Replace this with your API key
   $apiKey = 'O58NA5rVmO57OnXkb7TyYAKsCxOKmLFBiFlWCYCZ';
   try {
-      // create ApiClient
-      $pf = new PrintfulApiClient($apiKey);
+    // Get information about the store
 
-      // create Products Api object
-      $productsApi = new PrintfulProducts($pf);
+    // $store = $pf->get('store');
+    // var_export($store);
 
-      // set some paging info
-      $offset = 0;
-      $limit = 20;
 
-      /** @var SyncProductsResponse $list */
-      $list = $productsApi->getProducts($offset, $limit);
+    // Get product list
 
-  } catch (PrintfulApiException $e) { // API response status code was not successful
-      echo 'Printful API Exception: ' . $e->getCode() . ' ' . $e->getMessage();
-  } catch (PrintfulException $e) { // API call failed
-      echo 'Printful Exception: ' . $e->getMessage();
-      var_export($pf->getLastResponseRaw());
-  }
+    $products = $pf->get('products');
+    var_export($products);
+    
+
+    // Get variants for product 10
+    /*
+    $variants = $pf->get('products/10');
+    var_export($variants);
+    */
+
+    // Get information about Variant 1007
+    /*
+    $data = $pf->get('products/variant/1007');
+    var_export($data);
+    */
+
+} catch (PrintfulApiException $e) { //API response status code was not successful
+    echo 'Printful API Exception: ' . $e->getCode() . ' ' . $e->getMessage();
+} catch (PrintfulException $e) { //API call failed
+    echo 'Printful Exception: ' . $e->getMessage();
+    var_export($pf->getLastResponseRaw());
+}
       }
 }
