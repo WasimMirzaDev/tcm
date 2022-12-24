@@ -13,7 +13,6 @@ class PrintFulController extends Controller
 {
     public function get_products()
     {
-      return phpinfo();
       // Replace this with your API key
   $apiKey = 'O58NA5rVmO57OnXkb7TyYAKsCxOKmLFBiFlWCYCZ';
   try {
