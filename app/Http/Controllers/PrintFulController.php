@@ -21,7 +21,7 @@ class PrintFulController extends Controller
   // dd($pf);
   // create Products Api object
   $productsApi = new PrintfulProducts($pf);
-  // dd($productsApi);
+  dd($productsApi);
   // set some paging info
   $offset = 0;
   $limit = 20;
